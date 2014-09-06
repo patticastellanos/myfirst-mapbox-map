@@ -1,0 +1,40 @@
+_prefs: 
+  disabled: []
+  inspector: false
+  mapid: patticastellanos.5e50038a
+  rev: s-c1208fab
+  saveCenter: true
+attribution: ''
+center: 
+  - 54.140625
+  - 9.44906182688142
+  - 2
+description: ''
+Layer: 
+  - id: earthquakes
+    Datasource: 
+      file: /Users/patti/Dropbox/mapbox/earthquakes.csv
+      type: csv
+    description: USGS Earthquakes
+    fields: 
+      id: String
+      depth: Number
+      dmin: Number
+      gap: Number
+      latitude: Number
+      longitude: Number
+      mag: Number
+      magType: String
+      net: String
+      nst: String
+      place: String
+      rms: Number
+      time: String
+      type: String
+      updated: String
+    properties: 
+      "buffer-size": 32
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+maxzoom: 6
+minzoom: 0
+name: Earthquakes
