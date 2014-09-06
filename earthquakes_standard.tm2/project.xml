@@ -5,7 +5,7 @@
 <Parameters>
   <Parameter name="attribution"><![CDATA[<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>]]></Parameter>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
-  <Parameter name="center">-114.609375,31.840232667909365,5</Parameter>
+  <Parameter name="center">-98.26171875,35.02999636902566,3</Parameter>
   <Parameter name="format">png8:m=h</Parameter>
   <Parameter name="maxzoom">22</Parameter>
   <Parameter name="minzoom">0</Parameter>
@@ -692,8 +692,27 @@
 
 <Style name="earthquakes" filter-mode="first">
   <Rule>
-    <MarkersSymbolizer opacity="0.45" allow-overlap="true" stroke-width="0" fill="#aa2200" />
-    <PointSymbolizer file="flame_on_flame.svg" allow-overlap="true" transform="scale(0.1)" opacity="0.5" />
+    <MaxScaleDenominator>50000000</MaxScaleDenominator>
+    <PointSymbolizer transform="scale([mag]*[mag]*0.008)" comp-op="screen" opacity="0.25" file="flame_on_flame.svg" allow-overlap="true" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000000</MaxScaleDenominator>
+    <MinScaleDenominator>50000000</MinScaleDenominator>
+    <PointSymbolizer transform="scale([mag]*[mag]*0.004)" comp-op="screen" opacity="0.25" file="flame_on_flame.svg" allow-overlap="true" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000000</MaxScaleDenominator>
+    <MinScaleDenominator>100000000</MinScaleDenominator>
+    <PointSymbolizer transform="scale([mag]*[mag]*0.002)" comp-op="screen" opacity="0.25" file="flame_on_flame.svg" allow-overlap="true" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>500000000</MaxScaleDenominator>
+    <MinScaleDenominator>200000000</MinScaleDenominator>
+    <PointSymbolizer transform="scale([mag]*[mag]*0.001)" comp-op="screen" opacity="0.25" file="flame_on_flame.svg" allow-overlap="true" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>500000000</MinScaleDenominator>
+    <PointSymbolizer transform="scale([mag]*[mag]*0.0005)" comp-op="screen" opacity="0.25" file="flame_on_flame.svg" allow-overlap="true" />
   </Rule>
 </Style>
 <Layer name="earthquakes"
